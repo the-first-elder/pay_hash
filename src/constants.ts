@@ -1,1 +1,1 @@
-export const TEMPO_TESTNET_CHAIN_ID = 42431;
+export const TEMPO_TESTNET_CHAIN_ID = 42429;
