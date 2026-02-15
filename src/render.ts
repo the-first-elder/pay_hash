@@ -19,9 +19,9 @@ export function renderReceiptHtml({
   const templateSource = fs.readFileSync(
     path.join(
       template.emailTemplatePath ?? __dirname,
-      template.emailTemplateName ?? "mailTemplate.hbs"
+      template.emailTemplateName ?? "mailTemplate.hbs",
     ),
-    "utf8"
+    "utf8",
   );
   const templates = Handlebars.compile(templateSource);
   return templates({
@@ -32,9 +32,11 @@ export function renderReceiptHtml({
     bodyFontSize: template.bodyFontSize || 14,
     receiptTitle: template.subject || "Payment Receipt",
     footerText: template.footerText || "Powered by PayHash",
-    txHash: receipt.transactionHash,
-    payer: receipt.from,
-    timestamp: new Date(receipt.timestamp).toUTCString(),
+    txHash: receipt.receipt?.transactionHash || receipt.transactionHash,
+    payer: receipt.receipt?.from || receipt.from,
+    timestamp: new Date(
+      receipt.receipt?.timestamp || receipt.timestamp,
+    ).toUTCString(),
     year: new Date().getFullYear(),
     amount: params.amount,
     token: tokenName,

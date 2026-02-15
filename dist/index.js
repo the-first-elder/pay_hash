@@ -71,9 +71,11 @@ function renderReceiptHtml({
     bodyFontSize: template.bodyFontSize || 14,
     receiptTitle: template.subject || "Payment Receipt",
     footerText: template.footerText || "Powered by PayHash",
-    txHash: receipt.transactionHash,
-    payer: receipt.from,
-    timestamp: new Date(receipt.timestamp).toUTCString(),
+    txHash: receipt.receipt?.transactionHash || receipt.transactionHash,
+    payer: receipt.receipt?.from || receipt.from,
+    timestamp: new Date(
+      receipt.receipt?.timestamp || receipt.timestamp
+    ).toUTCString(),
     year: (/* @__PURE__ */ new Date()).getFullYear(),
     amount: params.amount,
     token: tokenName
