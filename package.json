@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/elder00/payhash"
+    "url": "https://github.com/the-first-elder/pay_hash"
   },
   "keywords": [
     "web3",
