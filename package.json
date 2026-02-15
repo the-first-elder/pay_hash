@@ -4,6 +4,12 @@
   "description": "PayHash SDK is a professional TypeScript library designed to streamline blockchain payments, receipt generation, and automated email notifications",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/the-first-elder/pay_hash"
@@ -17,9 +23,9 @@
   "author": "the-first-elder",
   "twitter": "https://x.com/The_First_Elder",
   "scripts": {
-    "build": "tsc && npm run copy-templates",
+    "build": "tsup src/index.ts --format esm --dts && npm run copy-templates",
     "copy-templates": "cpy 'src/**/*.hbs' 'dist'",
-    "dev": "tsc --watch"
+    "dev": "tsup src/index.ts --format esm --dts --watch"
   },
   "license": "ISC",
   "type": "module",
