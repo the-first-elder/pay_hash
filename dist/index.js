@@ -41,7 +41,7 @@ import path2 from "path";
 import { fileURLToPath as fileURLToPath2 } from "url";
 
 // src/constants.ts
-var TEMPO_TESTNET_CHAIN_ID = 42431;
+var TEMPO_TESTNET_CHAIN_ID = 42429;
 
 // src/render.ts
 import Handlebars2 from "handlebars";
