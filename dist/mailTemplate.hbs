@@ -1,0 +1,69 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{receiptTitle}}</title>
+    <style>
+      body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust:
+      100%; } body { margin: 0; padding: 0; font-family: Arial, sans-serif;
+      background-color: #f9f9f9; color: #111; } table { border-collapse:
+      collapse !important; } a { color: inherit; text-decoration: none; }
+      .container { max-width: 600px; margin: 40px auto; background-color:
+      #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px
+      rgba(0,0,0,0.05); padding: 32px; } .header { text-align: center;
+      border-bottom: 2px solid
+      {{primaryColor}}; padding-bottom: 16px; margin-bottom: 24px; } .header h1
+      { color:
+      {{primaryColor}}; font-size:
+      {{titleFontSize}}px; margin: 0; } .body-content { font-size:
+      {{bodyFontSize}}px; line-height: 1.6; color: #333; } .body-content p {
+      margin-bottom: 16px; } .highlight { font-weight: bold; color:
+      {{primaryColor}}; } .footer { font-size: 12px; color: #777; text-align:
+      center; margin-top: 32px; line-height: 1.4; } .btn { display:
+      inline-block; background-color:
+      {{primaryColor}}; color: #ffffff; padding: 12px 24px; border-radius: 4px;
+      font-weight: 600; margin-top: 16px; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img src="{{logoUrl}}" alt="{{brandName}}" />
+        <h1>{{receiptTitle}}</h1>
+      </div>
+
+      <div class="body-content">
+        <p>Hello {{payer}},</p>
+        <p class="highlight">
+          You have made a payment of
+          {{amount}}
+          {{token}}
+          to
+          {{brandName}}.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+          odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+          quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
+          mauris. Fusce nec tellus sed augue semper porta.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+
+        <a
+          href="https://explore.tempo.xyz/receipt/{{txHash}}?live=false"
+          class="btn"
+        >View Transaction</a>
+      </div>
+
+      <div class="footer">
+        {{footerText}}
+        &copy;
+        {{year}}
+      </div>
+    </div>
+  </body>
+</html>
