@@ -1,6 +1,6 @@
 {
   "name": "pay_hash",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "PayHash SDK is a professional TypeScript library designed to streamline blockchain payments, receipt generation, and automated email notifications",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
