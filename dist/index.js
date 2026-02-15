@@ -41,7 +41,7 @@ import path2 from "path";
 import { fileURLToPath as fileURLToPath2 } from "url";
 
 // src/constants.ts
-var TEMPO_TESTNET_CHAIN_ID = 42429;
+var TEMPO_TESTNET_CHAIN_ID = 42431;
 
 // src/render.ts
 import Handlebars2 from "handlebars";
@@ -76,7 +76,7 @@ function renderReceiptHtml({
     timestamp: new Date(
       receipt.receipt?.timestamp || receipt.timestamp
     ).toUTCString(),
-    year: (/* @__PURE__ */ new Date()).getFullYear(),
+    year: (/* @__PURE__ */ new Date()).getFullYear().toLocaleString(),
     amount: params.amount,
     token: tokenName
   });

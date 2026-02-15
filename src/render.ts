@@ -37,7 +37,7 @@ export function renderReceiptHtml({
     timestamp: new Date(
       receipt.receipt?.timestamp || receipt.timestamp,
     ).toUTCString(),
-    year: new Date().getFullYear(),
+    year: new Date().getFullYear().toLocaleString(),
     amount: params.amount,
     token: tokenName,
   });
